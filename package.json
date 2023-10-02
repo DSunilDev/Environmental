@@ -1,0 +1,31 @@
+{
+  "name": "envi",
+  "version": "1.0.0",
+  "description": "Glasses of abr",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DSunilDev/Environmental.git"
+  },
+  "keywords": [
+    "envi"
+  ],
+  "author": "Sunilkumar",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/DSunilDev/Environmental/issues"
+  },
+  "homepage": "https://github.com/DSunilDev/Environmental#readme",
+  "dependencies": {
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "mongodb": "^6.1.0",
+    "node": "^20.7.0",
+    "nodemon": "^3.0.1",
+    "path": "^0.12.7",
+    "yarn": "^1.22.19"
+  }
+}
