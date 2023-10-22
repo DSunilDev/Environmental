@@ -3,7 +3,7 @@ const path=require('path')
 const bcry=require('bcryptjs')
 const multer = require('multer');
 
-const db=require('DATABASE/database.js');
+const db=require('./DATABASE/database');
 const app=express();
 
 app.set('views',path.join(__dirname,'views'));
