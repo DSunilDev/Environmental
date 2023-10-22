@@ -11,16 +11,17 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-
 awesome/5.15.2/css/all.min.css"
     />
-    <link rel="stylesheet" href="../styles/style.css" />
+    <link rel="stylesheet" href="style.css" />
     <!-- custom css file link -->
-    <link rel="stylesheet" href="../styles/style.css" />
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <%- include('navbar') %>
     <!-- donate section starts -->
     <section class="donate" id="donate">
       <h1 class="heading">
         <i class="fas fa-quote-left"></i> donate us
-        <i class="fas fa-quote-right">              Thanks for your Heartly Support</i>
+        <i class="fas fa-quote-right">               Thanks for your Heartly Support</i>
       </h1>
       <div class="form-container">
         <div>
@@ -54,5 +55,6 @@ awesome/5.15.2/css/all.min.css"
       </div>
     </section>
     <!-- donate section ends -->
+    <%- include('footer') %>
   </body>
 </html>

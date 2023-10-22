@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login User</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <%- include('navbar') %>
+    <br><br><br><br><br><br>
+    <center>
+        <div class="posts-section" style="padding: 20px;">
+            <h2  style="color: rgb(158, 132, 18);">Posts Section</h2>
+            <ul>
+                <% for (const post of posts) { %>
+                    <li>
+                        <h2 class="phead"><%= post.title %></h2>
+                        <img src="<%= post.imagePath %>" alt="Post Image" width="600px" height="470px">
+                        <h5>Here is the context ...</h5>
+                        <p class="pcontent"><%= post.content %></p>
+                    </li>
+                <% } %>
+            </ul>
+        </div>
+    </center>
+    <%- include('footer') %>
+</body>
+</html>

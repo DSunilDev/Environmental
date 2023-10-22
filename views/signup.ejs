@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup User</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <%- include('navbar') %>
+    <br><br><br><br><br><br>
+    <center>
+    <h2>SignUp Section</h2>
+    <div class="formbox">
+        <form action="/signup" method="POST">
+            <label>Email</label>
+            <input type="email" placeholder="Mail" name="mail" required>
+            <br><br>
+            <label>Password</label>
+            <input type="password" placeholder="Password" name="password" required>
+            <br><br>
+            <button>Submit</button>
+        </form>
+        </div>
+        </center>
+        <%- include('footer') %>
+</body>
+</html>
