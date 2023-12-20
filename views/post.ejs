@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Grasses Collection | Grasses of Tamilnadu</title>
+    <title>Grass Library | Grasses of Tamilnadu</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -32,6 +32,8 @@
     
                         <div style="display: flex; flex-wrap: wrap; margin-top: 10px;">
                             <div style="flex: 1; margin-right: 10px;">
+                                <h2>English Name: <%= post.englishName %></h2>
+                                <h2>Tamil Name: <%= post.tamilName %></h2>
                                 <h3>Classification: <%= post.classification %></h3>
                                 <h3>Family: <%= post.family %></h3>
                                 <h3>Subfamily: <%= post.subfamily %></h3>
@@ -39,12 +41,10 @@
                                 <h3>Genus: <%= post.genus %></h3>
                                 <h3>Taxon: <%= post.taxon %></h3>
                                 <h3>Synonyms: <%= post.synonyms %></h3>
-                                <h3>English Name: <%= post.englishName %></h3>
-                                <h3>Tamil Name: <%= post.tamilName %></h3>
                                 <h3>Habit: <%= post.habit %></h3>
                                 <h3>Leaf: <%= post.leaf %></h3>
                                 <h3>Inflorescence: <%= post.inflorescence %></h3>
-                                <h3>Spiklets: <%= post.spiklets %></h3>
+                                <h2>Spiklets: <%= post.spiklets %></h2>
                             </div>
                             <div style="flex: 1;">
                                 <h3>Caryopsis: <%= post.caryopsis %></h3>
@@ -53,11 +53,11 @@
                                 <h3>Habitat: <%= post.habitat %></h3>
                                 <h3>Distribution in Tamilnadu: <%= post.distributionTamilnadu %></h3>
                                 <h3>Distribution in ABR: <%= post.distributionAbr %></h3>
-                                <h3>Field Notes: <%= post.fieldNotes %></h3>
                                 <h3>Occurrence: <%= post.occurrence %></h3>
                                 <h3>Uses: <%= post.uses %></h3>
                                 <h3>IUCN Status: <%= post.iucnStatus %></h3>
                                 <h3>Key Reference: <%= post.keyReference %></h3>
+                                <h2>Field Notes: <%= post.fieldNotes %></h2>
                             </div>
                         </div>
     
