@@ -3,22 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Posts Section</title>
+    <title>Grasses Collection | Grasses of Tamilnadu</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <%- include('navbar') %>
-    <br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br>
     <center>
         <div class="posts-section" style="padding: 20px;">
-            <h2  style="color: rgb(158, 132, 18);">Posts Section</h2>
+            <h2 style="color: rgb(14, 88, 68);">Grasses Library</h2>
             <ul>
                 <% for (const post of posts) { %>
                     <li>
                         <h2 class="phead"><%= post.title %></h2>
-                        <img src="<%= post.imagePath %>" alt="Post Image" width="600px" height="470px">
-                        <h5>Here is the context ...</h5>
-                        <p class="pcontent"><%= post.content %></p>
+
+                        <div style="display: flex; justify-content: center;">
+                            <div style="flex: 1; margin-right: 10px;">
+                                <% if (post.imagePaths && post.imagePaths[0]) { %>
+                                    <img src="<%= post.imagePaths[0] %>" alt="Post Image 1" width="300px" height="235px">
+                                <% } %>
+                            </div>
+                            <div style="flex: 1;">
+                                <% if (post.imagePaths && post.imagePaths[1]) { %>
+                                    <img src="<%= post.imagePaths[1] %>" alt="Post Image 2" width="300px" height="235px">
+                                <% } %>
+                            </div>
+                        </div>
+    
+                        <div style="display: flex; flex-wrap: wrap; margin-top: 10px;">
+                            <div style="flex: 1; margin-right: 10px;">
+                                <h3>Classification: <%= post.classification %></h3>
+                                <h3>Family: <%= post.family %></h3>
+                                <h3>Subfamily: <%= post.subfamily %></h3>
+                                <h3>Tribe: <%= post.tribe %></h3>
+                                <h3>Genus: <%= post.genus %></h3>
+                                <h3>Taxon: <%= post.taxon %></h3>
+                                <h3>Synonyms: <%= post.synonyms %></h3>
+                                <h3>English Name: <%= post.englishName %></h3>
+                                <h3>Tamil Name: <%= post.tamilName %></h3>
+                                <h3>Habit: <%= post.habit %></h3>
+                                <h3>Leaf: <%= post.leaf %></h3>
+                                <h3>Inflorescence: <%= post.inflorescence %></h3>
+                                <h3>Spiklets: <%= post.spiklets %></h3>
+                            </div>
+                            <div style="flex: 1;">
+                                <h3>Caryopsis: <%= post.caryopsis %></h3>
+                                <h3>Flowering Period: <%= post.floweringPeriod %></h3>
+                                <h3>Fruiting Period: <%= post.fruitingPeriod %></h3>
+                                <h3>Habitat: <%= post.habitat %></h3>
+                                <h3>Distribution in Tamilnadu: <%= post.distributionTamilnadu %></h3>
+                                <h3>Distribution in ABR: <%= post.distributionAbr %></h3>
+                                <h3>Field Notes: <%= post.fieldNotes %></h3>
+                                <h3>Occurrence: <%= post.occurrence %></h3>
+                                <h3>Uses: <%= post.uses %></h3>
+                                <h3>IUCN Status: <%= post.iucnStatus %></h3>
+                                <h3>Key Reference: <%= post.keyReference %></h3>
+                            </div>
+                        </div>
+    
                     </li>
                 <% } %>
             </ul>

@@ -3,26 +3,138 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>POST ADD</title>
+    <title> ADD GRASSES </title>
     <link rel="stylesheet" href="style.css">
 </head>
+<style>
+    label {
+    color: #333;
+    font-size: 2.2rem; /* Dark color for labels */
+    font-weight: bold; /* Make labels bold for better visibility */
+}
+
+/* Additional styling for the form for better layout */
+form {
+    max-width: 600px; /* Adjust the maximum width as needed */
+    margin: 0 auto; /* Center the form */
+}
+</style>
 <body>
     <%- include('navbar') %>
-    <br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br>
     <center>
-    <h2>Add Posts Section</h2>
+    <h2>Add Grasses</h2>
     <form method="POST" action="/posts" enctype="multipart/form-data"> <!-- enctype attribute for file uploads -->
         <label for="title">Title:</label>
         <input type="text" id="title" name="title" required>
         <br><br>
-        <label for="content">Content:</label>
-        <textarea id="content" name="content" rows="4" required></textarea>
+    
+        <label for="classification">Classification:</label>
+        <input type="text" id="classification" name="classification" required>
         <br><br>
-        <label for="image">Image:</label>
-        <input type="file" id="image" name="image" accept="" required> <!-- accept attribute for image files only -->
+    
+        <label for="family">Family:</label>
+        <input type="text" id="family" name="family" required>
         <br><br>
+    
+        <label for="subfamily">Subfamily:</label>
+        <input type="text" id="subfamily" name="subfamily">
+        <br><br>
+    
+        <label for="tribe">Tribe:</label>
+        <input type="text" id="tribe" name="tribe">
+        <br><br>
+    
+        <label for="genus">Genus:</label>
+        <input type="text" id="genus" name="genus" required>
+        <br><br>
+    
+        <label for="taxon">Taxon:</label>
+        <input type="text" id="taxon" name="taxon">
+        <br><br>
+    
+        <label for="synonyms">Synonyms:</label>
+        <input type="text" id="synonyms" name="synonyms">
+        <br><br>
+    
+        <label for="englishName">English Name:</label>
+        <input type="text" id="englishName" name="englishName">
+        <br><br>
+    
+        <label for="tamilName">Tamil Name:</label>
+        <input type="text" id="tamilName" name="tamilName">
+        <br><br>
+    
+        <label for="habit">Habit:</label>
+        <input type="text" id="habit" name="habit">
+        <br><br>
+    
+        <label for="leaf">Leaf:</label>
+        <input type="text" id="leaf" name="leaf">
+        <br><br>
+    
+        <label for="inflorescence">Inflorescence:</label>
+        <input type="text" id="inflorescence" name="inflorescence">
+        <br><br>
+    
+        <label for="spiklets">Spiklets:</label>
+        <input type="text" id="spiklets" name="spiklets">
+        <br><br>
+    
+        <label for="caryopsis">Caryopsis:</label>
+        <input type="text" id="caryopsis" name="caryopsis">
+        <br><br>
+    
+        <label for="floweringPeriod">Flowering Period:</label>
+        <input type="text" id="floweringPeriod" name="floweringPeriod">
+        <br><br>
+    
+        <label for="fruitingPeriod">Fruiting Period:</label>
+        <input type="text" id="fruitingPeriod" name="fruitingPeriod">
+        <br><br>
+    
+        <label for="habitat">Habitat:</label>
+        <input type="text" id="habitat" name="habitat">
+        <br><br>
+    
+        <label for="distributionTamilnadu">Distribution in Tamilnadu:</label>
+        <input type="text" id="distributionTamilnadu" name="distributionTamilnadu">
+        <br><br>
+    
+        <label for="distributionAbr">Distribution in ABR:</label>
+        <input type="text" id="distributionAbr" name="distributionAbr">
+        <br><br>
+    
+        <label for="fieldNotes">Field Notes:</label>
+        <textarea id="fieldNotes" name="fieldNotes" rows="4"></textarea>
+        <br><br>
+    
+        <label for="occurrence">Occurrence:</label>
+        <input type="text" id="occurrence" name="occurrence">
+        <br><br>
+    
+        <label for="uses">Uses:</label>
+        <textarea id="uses" name="uses" rows="4"></textarea>
+        <br><br>
+    
+        <label for="iucnStatus">IUCN Status:</label>
+        <input type="text" id="iucnStatus" name="iucnStatus">
+        <br><br>
+    
+        <label for="keyReference">Key Reference (Book and Floras):</label>
+        <input type="text" id="keyReference" name="keyReference">
+        <br><br>
+
+        <label for="image1">Image 1:</label>
+        <input type="file" id="image1" name="image1" accept="image/*" required>
+        <br><br>
+    
+        <label for="image2">Image 2:</label>
+        <input type="file" id="image2" name="image2" accept="image/*" required>
+        <br><br><br><br>
         <button type="submit">Submit</button>
     </form>
+    <br><br><br><br><br>
     <%- include('footer') %>
 </body>
 </html>

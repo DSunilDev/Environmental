@@ -14,16 +14,19 @@ app.use(express.static('styles'));
 app.use(express.static('uploads')); 
 
 //Multer 
-const storageconfig=multer.diskStorage({
-    destination:function(req,file,cb){
-        cb(null,'uploads') },
-        filename:function(req,file,cb)
-        {
-            cb(null,Date.now()+'-'+file.originalname);
- }
+const storage = multer.diskStorage({
+    destination: (req, file, cb) => {
+        cb(null, 'uploads/'); // Relative path to the 'uploads' folder
+    },
+    filename: (req, file, cb) => {
+        const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9);
+        const fileExtension = path.extname(file.originalname);
+        cb(null, file.fieldname + '-' + uniqueSuffix + fileExtension);
+    }
 });
 
-const upload=multer({storage:storageconfig});
+const upload = multer({ storage: storage });
+
 app.use('/uploads',express.static('uploads'))
 
 app.use(express.urlencoded({extended:true}))
@@ -111,7 +114,7 @@ app.post('/login',async function(req,res)
             res.redirect('/login')
             console.log("Wrong Password")
         }else{
-                res.redirect('/post')
+                res.redirect('/addpost')
         }
 })
 
@@ -121,23 +124,52 @@ app.get('/posts',async function(req,res)
     res.render('post',{posts:postdata})
 })
 
+app.post('/posts', upload.fields([{ name: 'image1', maxCount: 1 }, { name: 'image2', maxCount: 1 }]), async (req, res) => {
+    try {
+        const { title, classification, family, subfamily, tribe, genus, taxon, synonyms, englishName, tamilName, habit, leaf, inflorescence, spiklets, caryopsis, floweringPeriod, fruitingPeriod, habitat, distributionTamilnadu, distributionAbr, fieldNotes, occurrence, uses, iucnStatus, keyReference } = req.body;
+        const images = req.files;
 
+        const postdata = {
+            title: title,
+            classification: classification,
+            family: family,
+            subfamily: subfamily,
+            tribe: tribe,
+            genus: genus,
+            taxon: taxon,
+            synonyms: synonyms,
+            englishName: englishName,
+            tamilName: tamilName,
+            habit: habit,
+            leaf: leaf,
+            inflorescence: inflorescence,
+            spiklets: spiklets,
+            caryopsis: caryopsis,
+            floweringPeriod: floweringPeriod,
+            fruitingPeriod: fruitingPeriod,
+            habitat: habitat,
+            distributionTamilnadu: distributionTamilnadu,
+            distributionAbr: distributionAbr,
+            fieldNotes: fieldNotes,
+            occurrence: occurrence,
+            uses: uses,
+            iucnStatus: iucnStatus,
+            keyReference: keyReference,
 
-app.post('/posts', upload.single('image'), async function (req, res) {
-    const { title, content } = req.body;
-    const image = req.file;
-    
-    const postdata = {
-        title: title,
-        content: content,
-        imagePath: image.path
-    };
+            // Assuming you want to store the paths of both images in an array
+            imagePaths: [images['image1'][0].path, images['image2'][0].path]
+        };
 
-    // Assuming you are using a MongoDB database
-    
+        // Assuming you are using a MongoDB database
         await db.getDb().collection('post').insertOne(postdata);
         res.redirect('/addpost');
+    } catch (error) {
+        console.error(error);
+        res.status(500).send('Internal Server Error');
+    }
 });
+
+
 
 
 app.use(function(req,res)
