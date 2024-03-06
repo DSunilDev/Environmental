@@ -13,6 +13,7 @@ app.set('view engine','ejs');
 app.use(express.static('styles'));
 
 app.use(express.static('uploads')); 
+app.use(express.static('videos'));
 
 //Multer 
 const storage = multer.diskStorage({
